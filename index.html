@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(to right, #2196F3, #E3F2FD); color: #333; transition: background 0.3s, color 0.3s; }
+        .dark-mode { background: #121212; color: #fff; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #0D47A1; color: #fff; padding: 20px 0; text-align: center; font-size: 24px; font-weight: bold; }
+        .section { background: #fff; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); transition: background 0.3s; }
+        .dark-mode .section { background: #333; }
+        h2 { color: #0d47a1; text-align: center; }
+        img, video { width: 100%; max-width: 500px; display: block; margin: 10px auto; }
+        .slide { display: none; padding: 20px; animation: fadeIn 1s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .active { display: block; }
+        .navigation { text-align: center; margin-top: 20px; }
+        .navigation button, .toggle-mode { padding: 10px 20px; margin: 5px; border: none; background: #0D47A1; color: white; cursor: pointer; border-radius: 5px; transition: background 0.3s; }
+        .navigation button:hover, .toggle-mode:hover { background: #1565c0; }
+        .dark-mode .navigation button, .dark-mode .toggle-mode { background: #555; }
+        .resume { text-align: center; margin: 20px 0; }
+        .contact { text-align: center; padding: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header>
+    <div class="container">
+        <div class="slide active" id="about">
+            <h2>About Me</h2>
+            <img src="C:\Users\Omkar\Pictures\Saved Pictures\Omkar.jpg" alt="My Image">
+            <p><b><center>Omkar Sayaji Karle</center></b></p>
+            <p><center>I am an Electronics and Telecommunication Engineering student working on innovative projects.</center></p>
+        </div>
+
+        <div class="slide" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Arduino Programming.</li>
+                <li>Microcontrollers.</li>
+                <li>Solving Errors From Simulation.</li>
+                <li>Basic Information of Components.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><b>1. Accident Detection Helmet</b></li>
+                <video controls><source src="videos/helmet_demo.mp4" type="video/mp4"></video>
+                <li><b>2. Ambulance Siren</b></li>
+                <video controls><source src="C:\Users\Omkar\Videos\Ambulance Siren.mp4" type="video/mp4"></video>
+                <li><b>3. Obstacle Avoiding Robot</b></li>
+                <video controls><source src="videos/obstacle_robot.mp4" type="video/mp4"></video>
+            </ul>
+        </div>
+
+        <div class="slide" id="certificates">
+            <h2>Certificates</h2>
+<ul><li>1.Paython Essential 1</li>
+            <img src="Omkar.jpg" alt="Certificate 1">
+<li>2.Paython Essential 2</li>
+            <img src="Omkar.jpg" alt="Certificate 2">
+<li>3.NASSCOM</li>
+            <img src="bfidbvidsbvi" alt="Certificate 2">
+
+           </ul>        </div>
+
+        <div class="slide" id="contact">
+            <h2>Contact Me</h2>
+            <p>Phone: +91 8329610737</p>
+            <p>Email: omkarkarle007@gmail.com</p>
+        </div>
+
+        <div class="resume">
+            <a href="resume/Omkar_Resume.pdf" download>Download My Resume</a>
+        </div>
+
+        <div class="social-media" style="text-align:center; margin-top:20px;">
+            <center><a href="https://linkedin.com/in/yourlinkedin">LinkedIn</a></center>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="showSlide('about')">About Me</button>
+        <button onclick="showSlide('skills')">Skills</button>
+        <button onclick="showSlide('projects')">Projects</button>
+        <button onclick="showSlide('certificates')">Certificates</button>
+        <button onclick="showSlide('contact')">Contact</button>
+    </div>
+
+    <script>
+        function showSlide(id) {
+            let slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
